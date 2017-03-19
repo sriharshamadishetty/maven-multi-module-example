@@ -12,7 +12,7 @@
          </repository>
         <snapshotRepository>
             <id>nexus</id>
-            <name>Internal Releases</name>
+            <name>Internal Snapshots</name>
             <url>http://34.204.255.249:8081/nexus/content/repositories/snapshots/</url>
          </snapshotRepository>
         </distributionManagement> 
@@ -33,7 +33,7 @@
                             <execution>
                                 <id>attach-javadocs</id>
                                 <goals>
-                                    <goal>war</goal>
+                                    <goal>pom</goal>
                                 </goals>
                             </execution>
                         </executions>
