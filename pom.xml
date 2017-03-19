@@ -6,12 +6,12 @@
     <packaging>pom</packaging>
     <distributionManagement>
         <repository>
-            <id>deployment</id>
+            <id>nexus</id>
             <name>Internal Releases</name>
             <url>http://34.204.255.249:8081/nexus/content/repositories/releases/</url>
          </repository>
         <snapshotRepository>
-            <id>deployment</id>
+            <id>nexus</id>
             <name>Internal Releases</name>
             <url>http://34.204.255.249:8081/nexus/content/repositories/snapshots/</url>
          </snapshotRepository>
@@ -21,4 +21,37 @@
         <module>core</module>
         <module>app</module>
     </modules>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>war</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
