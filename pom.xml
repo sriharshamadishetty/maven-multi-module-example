@@ -33,7 +33,7 @@
                             <execution>
                                 <id>attach-javadocs</id>
                                 <goals>
-                                    <goal>pom</goal>
+                                    <goal>war</goal>
                                 </goals>
                             </execution>
                         </executions>
