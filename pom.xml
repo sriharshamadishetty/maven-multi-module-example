@@ -6,11 +6,9 @@
     <packaging>pom</packaging>
     <distributionManagement>
         <repository>
-      <uniqueVersion>false</uniqueVersion>
-      <id>corp1</id>
-      <name>Corporate Repository</name>
-      <url>scp://repo/maven2</url>
-      <layout>default</layout>
+     <id>nexus</id>
+            <name>Internal Releases</name>
+            <url>http://34.204.255.249:8081/nexus/content/repositories/releases/</url>
          </repository>
         <snapshotRepository>
             <id>nexus</id>
